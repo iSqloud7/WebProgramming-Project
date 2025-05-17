@@ -1,22 +1,30 @@
 package org.example.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 
 @Entity
-@Table(name = "students")
+@Table(name = "STUDENTS")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
+
     private String surname;
+
     private Integer index;
+
     private String email;
 
     public Student() {
+    }
+
+    public Student(String name, String surname, Integer index, String email) {
+        this.name = name;
+        this.surname = surname;
+        this.index = index;
+        this.email = email;
     }
 
     public Student(Long id, String name, String surname, Integer index, String email) {
